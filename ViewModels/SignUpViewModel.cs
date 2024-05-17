@@ -28,7 +28,7 @@ public class SignUpViewModel
 
 
     [Required]
-    [Display(Name = "Password", Prompt = "Enter your password")]
+    [Display(Name = "Confirm password", Prompt = "Confirm your password")]
     [DataType(DataType.Password)]
     [Compare(nameof(Password), ErrorMessage = "Passwords do not match")]
     public string ConfirmPassword { get; set; } = null!;
