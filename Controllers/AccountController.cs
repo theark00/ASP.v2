@@ -1,4 +1,4 @@
-﻿using Infrastructure.Contexts;
+using Infrastructure.Contexts;
 using Infrastructure.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -18,6 +18,8 @@ public class AccountController(UserManager<UserEntity> userManager, ApplicationC
     {
         var nameIdentifier = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
         var user = await _context.Users.Include(i => i.Address).FirstOrDefaultAsync(x => x.Id == nameIdentifier);
+
+        
 
         var viewModel = new AccountDetailsViewModel
         {
@@ -134,6 +136,29 @@ public class AccountController(UserManager<UserEntity> userManager, ApplicationC
             TempData["StatusMessage"] = "Unable to save address information";
         }
 
+        return RedirectToAction("Details", "Account");
+    }
+    [HttpPost]
+    public async Task<IActionResult> UploadProfileImage(IFormFile file)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user != null && file != null && file.Length != 0) 
+        {
+            var fileName =$"p_{user.Id}_{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/images/uploads/profiles", fileName);
+
+            using var fs = new FileStream(filePath, FileMode.Create);
+            await file.CopyToAsync(fs);
+
+            user.ProfileImage = fileName;
+            await _userManager.UpdateAsync(user);
+            
+        }
+        else
+        {
+            TempData["StatusMessage"] = "Unable to upload profile image.";
+        }
+        
         return RedirectToAction("Details", "Account");
     }
 }
