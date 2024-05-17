@@ -1,0 +1,28 @@
+footer {
+    padding: 10px;
+    margin: 20px;
+    color: #9397AD;
+
+    .container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            font-size: 14px;
+            width: 100%;
+            text-align: center;
+
+            span {
+                display: inline;
+            }
+        }
+    }
+}

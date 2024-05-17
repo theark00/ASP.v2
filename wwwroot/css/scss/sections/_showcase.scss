@@ -1,0 +1,47 @@
+#showcase {
+    position: relative;
+    padding: 30px;
+    .container {
+        display: flex;
+
+        .content {
+            width: 40%;
+
+            h1 {
+                @include d4;
+                line-height: 1.4;
+            }
+
+            p {
+                margin: 2rem 0;
+            }
+
+            a {
+                display: inline-block;
+            }
+
+            .largest-brands {
+                margin-top: 4rem;
+                margin-bottom: 9rem;
+
+                h6 {
+                    margin-bottom: 2rem;
+                }
+
+                .brands {
+                    display: flex;
+                    gap: 3rem;
+                    img {
+                        width:120px;
+                    }
+                }
+            }
+        }
+
+        .showcase-image {
+            position: absolute;
+            right: 0;
+            width: 45%;
+        }
+    }
+}

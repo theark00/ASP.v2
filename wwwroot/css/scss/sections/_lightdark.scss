@@ -1,0 +1,39 @@
+#lightdark {
+    position: relative;
+
+    .dark-bg {
+        background-color: var(--color-gray-900);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50vw;
+        z-index: -1;
+    }
+
+    .container {
+        padding: 3rem 0;
+        text-align: center;
+
+        .title {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 2rem auto;
+
+            h1 {
+                flex: 1;
+            }
+
+            .light {
+                color: var(--color-white);
+                text-align: right;
+            }
+
+            .dark {
+                margin-left: 50px;
+                color: var(--color-gray-900);
+                text-align: left;
+            }
+        }
+    }
+}
