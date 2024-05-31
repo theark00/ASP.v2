@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,17 +6,18 @@
     <title>@ViewData["Title"] - Silicon</title>
     <script src="https://kit.fontawesome.com/520c9ab77b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    
+    <script src="~/js/formValidation.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <partial name="_Header" />
-            <main>
-                @RenderBody()
-            </main>
+        <main>
+            @RenderBody()
+        </main>
         <partial name="_Footer" />
     </div>
-            
+    
+           
      
     <script src="~/js/site.js" asp-append-version="true"></script>
     
