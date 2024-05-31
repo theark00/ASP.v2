@@ -1,0 +1,158 @@
+.account-details {
+    .container {
+        display: flex;
+        flex-direction: row;
+
+        .sidebar {
+            padding-right: 40px;
+            padding-left: 30px;
+            margin: 1rem;
+            border-right: 1px solid var(--color-gray-300);
+
+            .profile-image {
+                position: relative;
+
+                img {
+                    margin-left: 25px;
+                    border-radius: 50%;
+                    height: 125px;
+                    width: 125px;
+                    object-fit: cover;
+                    border: 1px solid var(--color-gray-400);
+                }
+
+                label {
+                    margin-left: 110px;
+                    position: absolute;
+                    top: 90px;
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            h3 {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .form-button {
+                margin: 10px;
+            }
+        }
+
+        .content {
+            flex-grow: 1;
+            margin-top: 3rem;
+            margin-left: 150px;
+
+            .form-basic {
+                margin-top: 50px;
+
+                input {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                }
+
+                .form-content {
+                    margin-top: 30px;
+                    display: grid;
+                    gap: 20px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: "firstname lastname" "email phone" "bio bio" "postalcode city" "cancel cancel" "save save";
+                }
+
+                .input.group {
+                    label {
+                        padding: 3px;
+                    }
+                }
+
+
+
+                #form-firstname {
+                    grid-area: firstname;
+                }
+
+                #form-lastname {
+                    grid-area: lastname;
+                }
+
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-phone {
+                    grid-area: phone;
+                }
+
+                #form-bio {
+                    grid-area: bio;
+                }
+
+                #form-button-1 {
+                    grid-area: cancle;
+                }
+
+                #form-button-2 {
+                    grid-area: save;
+                }
+            }
+
+            .form-address {
+                margin-top: 50px;
+                padding-bottom:50px;
+
+                input {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                }
+
+                .form-content {
+                    margin-top: 30px;
+                    display: grid;
+                    gap: 20px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: "addressline-1 addressline-2" "postalcode city" "save save" "cancel cancel";
+                }
+
+                .input.group {
+                    label {
+                        padding: 3px;
+                    }
+                }
+
+
+
+                #form-addressline-1 {
+                    grid-area: addressline-1;
+                }
+
+                #form-addressline-2 {
+                    grid-area: addressline-2;
+                }
+
+                #form-postalcode {
+                    grid-area: postalcode;
+                }
+
+                #form-city {
+                    grid-area: city;
+                }
+
+                #form-button-cancel {
+                    grid-area: cancel;
+                    
+                }
+
+                #form-button-save {
+                    grid-area: save;
+                }
+            }
+        }
+    }
+}
