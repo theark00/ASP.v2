@@ -6,11 +6,11 @@ using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add logging
-builder.Logging.AddConsole(); // Add Console logging provider
+
+builder.Logging.AddConsole();
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddHttpClient();
 builder.Services.AddDbContext<ApplicationContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("WebApp_Database")));
 builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>
 {
