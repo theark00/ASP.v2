@@ -1,4 +1,4 @@
-﻿@model SignInViewModel
+@model SignInViewModel
 @{
     ViewData["Title"] = "Sign In";
 }
@@ -21,13 +21,13 @@
             <div class="form-content">
                 <div id="form-email" class="input-group">
                     <label asp-for="Email"></label>
-                    <input asp-for="Email" />
-
+                    <input asp-for="Email" id="SignInEmail" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div id="form-password" class="input-group">
                     <label asp-for="Password"></label>
-                    <input asp-for="Password" />
-
+                    <input asp-for="Password" id="SignInPassword" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div id="form-checkbox" class="checkbox-group">
 
@@ -39,7 +39,7 @@
 
                 </div>
                 <div id="form-button">
-                    <button type="submit" class="btn btn-theme"><i class="fa.-regular fa-arrow-left-to-bracket"></i>  Sign in</button>
+                    <button type="submit" class="btn btn-theme"><i class="fa.-regular fa-arrow-right-to-bracket"></i>  Sign in</button>
                 </div>
             </div>
 
