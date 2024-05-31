@@ -1,4 +1,4 @@
-﻿@model AccountDetailsViewModel
+@model AccountDetailsViewModel
 
 @{
 
@@ -8,8 +8,18 @@
     <div class="container">
         
         
-        <aside>
-            <partial name="~/Views/Account/_AccountProfile.cshtml" />
+        <aside class="sidebar">
+            <partial class="profile-image" name="~/Views/Account/_AccountProfile.cshtml" />
+
+            <div class="form-button-1">
+                <button type="submit" class="btn btn-theme"><i class="fa-solid fa-gear"></i> Account Details</button>
+
+            </div>
+
+            <div class="form-button-2">
+
+                <button type="submit" class="btn btn-gray"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</button>
+            </div>
         </aside>
         
         <div class="content">
@@ -19,6 +29,7 @@
                     @TempData["StatusMessage"]
                 </div>
             }
+           
             <form class="form-basic" method="post" asp-action="UpdateBasicInfo" asp-controller="Account">
                 <h5>Basic Info</h5>
                 <div class="form-content">
@@ -47,8 +58,13 @@
                         <textarea asp-for="Basic!.Bio"> </textarea>
 
                     </div>
-                    <div class="form-button">
+                    <div class="form-button-1">
                         <button type="submit" class="btn btn-gray"> Cancel</button>
+
+                    </div>
+
+                    <div class="form-button-2">
+
                         <button type="submit" class="btn btn-theme"> Save changes</button>
                     </div>
                 </div>
@@ -77,8 +93,13 @@
 
                     </div>
 
-                    <div class="form-button">
+                    <div id="form-button-cancel">
                         <button type="submit" class="btn btn-gray"> Cancel</button>
+                        
+                    </div>
+
+                    <div id="form-button-save">
+                        
                         <button type="submit" class="btn btn-theme"> Save changes</button>
                     </div>
                 </div>
