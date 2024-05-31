@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Manrope:wght@200..800&display=swap");
 :root {
   --color-gray-000: #FFFFFF;
   --color-gray-100: #F3F6FF;
@@ -562,6 +562,125 @@ form .field-validation-error {
   padding: 2px 5px;
 }
 
+.account-details .container {
+  display: flex;
+  flex-direction: row;
+}
+.account-details .container .sidebar {
+  padding-right: 40px;
+  padding-left: 30px;
+  margin: 1rem;
+  border-right: 1px solid var(--color-gray-300);
+}
+.account-details .container .sidebar .profile-image {
+  position: relative;
+}
+.account-details .container .sidebar .profile-image img {
+  margin-left: 25px;
+  border-radius: 50%;
+  height: 125px;
+  width: 125px;
+  object-fit: cover;
+  border: 1px solid var(--color-gray-400);
+}
+.account-details .container .sidebar .profile-image label {
+  margin-left: 110px;
+  position: absolute;
+  top: 90px;
+  height: 40px;
+  width: 40px;
+}
+.account-details .container .sidebar h3 {
+  margin-top: 10px;
+  text-align: center;
+}
+.account-details .container .sidebar p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.account-details .container .sidebar .form-button {
+  margin: 10px;
+}
+.account-details .container .content {
+  flex-grow: 1;
+  margin-top: 3rem;
+  margin-left: 150px;
+}
+.account-details .container .content .form-basic {
+  margin-top: 50px;
+}
+.account-details .container .content .form-basic input {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.account-details .container .content .form-basic .form-content {
+  margin-top: 30px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "firstname lastname" "email phone" "bio bio" "postalcode city" "cancel cancel" "save save";
+}
+.account-details .container .content .form-basic .input.group label {
+  padding: 3px;
+}
+.account-details .container .content .form-basic #form-firstname {
+  grid-area: firstname;
+}
+.account-details .container .content .form-basic #form-lastname {
+  grid-area: lastname;
+}
+.account-details .container .content .form-basic #form-email {
+  grid-area: email;
+}
+.account-details .container .content .form-basic #form-phone {
+  grid-area: phone;
+}
+.account-details .container .content .form-basic #form-bio {
+  grid-area: bio;
+}
+.account-details .container .content .form-basic #form-button-1 {
+  grid-area: cancle;
+}
+.account-details .container .content .form-basic #form-button-2 {
+  grid-area: save;
+}
+.account-details .container .content .form-address {
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+.account-details .container .content .form-address input {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.account-details .container .content .form-address .form-content {
+  margin-top: 30px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "addressline-1 addressline-2" "postalcode city" "save save" "cancel cancel";
+}
+.account-details .container .content .form-address .input.group label {
+  padding: 3px;
+}
+.account-details .container .content .form-address #form-addressline-1 {
+  grid-area: addressline-1;
+}
+.account-details .container .content .form-address #form-addressline-2 {
+  grid-area: addressline-2;
+}
+.account-details .container .content .form-address #form-postalcode {
+  grid-area: postalcode;
+}
+.account-details .container .content .form-address #form-city {
+  grid-area: city;
+}
+.account-details .container .content .form-address #form-button-cancel {
+  grid-area: cancel;
+}
+.account-details .container .content .form-address #form-button-save {
+  grid-area: save;
+}
+
 .courses {
   padding-top: 3rem;
   padding-bottom: 5rem;
@@ -583,7 +702,7 @@ form .field-validation-error {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
 }
-.courses .container .course-items .course {
+.courses .container .course-items a {
   position: relative;
   display: block;
   border-radius: 8px;
@@ -591,10 +710,10 @@ form .field-validation-error {
   text-decoration: none;
   box-shadow: 0 0 14px -4px var(--color-gray-500);
 }
-.courses .container .course-items .course:hover {
+.courses .container .course-items a:hover {
   box-shadow: 0 0 14px -4px var(--color-gray-900);
 }
-.courses .container .course-items .course .bestseller {
+.courses .container .course-items a .bestseller {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -603,37 +722,37 @@ form .field-validation-error {
   padding: 4px 12px;
   border-radius: 4px;
 }
-.courses .container .course-items .course .bookmark {
+.courses .container .course-items a .bookmark {
   position: absolute;
   top: 1rem;
   right: 1rem;
   z-index: 2;
 }
-.courses .container .course-items .course img {
+.courses .container .course-items a img {
   width: 100%;
 }
-.courses .container .course-items .course .content {
+.courses .container .course-items a .content {
   padding: 1rem 2rem;
 }
-.courses .container .course-items .course .content .title {
+.courses .container .course-items a .content .title {
   font-size: 20px;
 }
-.courses .container .course-items .course .content .author {
+.courses .container .course-items a .content .author {
   font-size: 14px;
   margin: 0.5rem 0;
 }
-.courses .container .course-items .course .content .pricing {
+.courses .container .course-items a .content .pricing {
   display: flex;
   gap: 1rem;
   font-size: 18px;
   font-weight: 600;
 }
-.courses .container .course-items .course .content .pricing .original {
+.courses .container .course-items a .content .pricing .original {
   color: var(--color-theme);
   font-size: 18px;
   font-weight: 600;
 }
-.courses .container .course-items .course .content .footer {
+.courses .container .course-items a .content .footer {
   color: var(--color-gray-600);
   border-top: 1px solid var(--color-gray-400);
   display: flex;
@@ -641,10 +760,10 @@ form .field-validation-error {
   margin-top: 1rem;
   padding-top: 1rem;
 }
-.courses .container .course-items .course .content .footer .hours i {
+.courses .container .course-items a .content .footer .hours i {
   margin-right: 5px;
 }
-.courses .container .course-items .course .content .footer .likes i {
+.courses .container .course-items a .content .footer .likes i {
   margin-right: 5px;
 }
 
@@ -878,7 +997,7 @@ header .container .account-buttons .profile .profile-image form label {
 #lightdark .container .title {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   margin: 2rem auto;
 }
 #lightdark .container .title h1 {
